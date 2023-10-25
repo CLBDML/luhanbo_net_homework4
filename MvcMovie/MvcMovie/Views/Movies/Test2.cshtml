@@ -1,0 +1,23 @@
+﻿
+@model IEnumerable<MvcMovie.Models.Movie>
+
+<table class="table table-striped">
+    <tr>
+        <th>电影名称</th>
+        <th>电影类型</th>
+        <th>上映日期</th>
+        <th>票价</th>
+        <th colspan="2">操作</th>
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Title</td>
+            <td>@m.Genre</td>
+            <td>@m.ReleaseDate.Date.ToShortDateString()</td>
+            <td>@m.Price</td>
+            <td><a href="Edit/@m.Id">编辑</a></td>
+            <td><a href="Delete/@m.Id">删除</a></td>
+        </tr>
+    }
+</table>

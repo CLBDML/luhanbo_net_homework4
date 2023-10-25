@@ -1,0 +1,18 @@
+﻿@model MvcMovie.Models.Movie
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<h4>id= @Model.Id 电影信息：</h4>
+<p>电影名称 <a href="https://m.douban.com/search/?query=@Model.Title">@Model.Title</a></p>
+<p>上映日期 @Model.ReleaseDate.Date.ToLongDateString()</p>
+<p>电影类型 @Model.Genre</p>
+<p>电影票价 @Model.Price
+
+@if(Model.Price>=50)
+{
+    <i class="bi bi-emoji-angry" style="font-size:22px; color: red;"></i>
+}
+else
+{
+    <i class="bi bi-emoji-heart-eyes" style="font-size:22px; color: red;"></i>
+}
+</p>
